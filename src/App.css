@@ -85,6 +85,14 @@
   z-index: 1;
 }
 
+.checkout-container {
+  margin: 0.5rem;
+}
+
+.checkout-item-wrapper {
+  width: 50%;
+}
+
 .checkout-label {
   display: inline-block;
   width: 35%;
@@ -97,4 +105,26 @@
   display: inline-block;
   margin: 0;
   overflow: hidden;
+}
+
+.trade-form-info {
+  margin: 1rem 0.5rem;
+}
+
+.form-input {
+  width: 50%;
+}
+
+@media (max-width: 1024px) {
+  .checkout-item-wrapper {
+    width: 100%;
+  }
+
+  .checkout-label {
+    width: 50%;
+  }
+
+  .form-input {
+    width: 98%;
+  }
 }

@@ -28,7 +28,7 @@ export default function TextInput(props: PropType) {
   };
 
   return (
-    <FormControl sx={{ m: 1, width: "50%" }}>
+    <FormControl className="form-input" sx={{ margin: "0.5rem" }}>
       <TextField
         {...field}
         onChange={handleChange}

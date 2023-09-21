@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import { FieldErrors } from "react-hook-form";
 
+import "../../App.css";
+
 type PropType = {
   children?: React.ReactNode;
   errors?: FieldErrors;
@@ -30,7 +32,11 @@ export default function SelectInput(props: PropType) {
   const { name } = field;
 
   return (
-    <FormControl sx={{ m: 1, width: "50%" }} error={!!errorMsg(errors, name)}>
+    <FormControl
+      className="form-input"
+      sx={{ margin: "0.5rem" }}
+      error={!!errorMsg(errors, name)}
+    >
       <InputLabel>Trade</InputLabel>
       <Select label={label} {...field}>
         <MenuItem value="" hidden>

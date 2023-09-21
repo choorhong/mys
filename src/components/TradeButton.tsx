@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useCallback, useState } from "react";
 import Button from "@mui/material/Button";
 import TradeDialog from "./TradeDialog";
 
@@ -7,9 +7,9 @@ import TradeDialog from "./TradeDialog";
 // };
 
 const TradeButton = () => {
-  const [visible, setVisible] = React.useState(false);
+  const [visible, setVisible] = useState(false);
 
-  const handleToggleVisibility = React.useCallback(() => {
+  const handleToggleVisibility = useCallback(() => {
     setVisible((prevState) => !prevState);
   }, []);
 

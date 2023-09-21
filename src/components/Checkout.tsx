@@ -85,16 +85,16 @@ const Checkout = (props: PropType) => {
   };
 
   return (
-    <div style={{ margin: "0.5rem" }}>
-      <div style={{ width: "50%" }}>
+    <div className="checkout-container">
+      <div className="checkout-item-wrapper">
         <p className="checkout-label">Trade Type</p>
         <p className="checkout-value">{capitalizeFirstLetter(tradeType)}</p>
       </div>
-      <div style={{ width: "50%" }}>
+      <div className="checkout-item-wrapper">
         <p className="checkout-label">Unit</p>
         <p className="checkout-value">{unit}</p>
       </div>
-      <div style={{ width: "50%" }}>
+      <div className="checkout-item-wrapper">
         <p className="checkout-label">
           {tradeType === "purchase" ? "Cost of Purchase" : "Cost of Sales"}
         </p>
@@ -102,13 +102,13 @@ const Checkout = (props: PropType) => {
           {costOfTransaction && formatNumberToLocaleString(costOfTransaction)}
         </p>
       </div>
-      <div style={{ width: "50%" }}>
+      <div className="checkout-item-wrapper">
         <p className="checkout-label">Current Account Balance</p>
         <p className="checkout-value">{balance.toLocaleString()}</p>
       </div>
 
       {potentialEarning ? (
-        <div style={{ width: "50%" }}>
+        <div className="checkout-item-wrapper">
           <p className="checkout-label">Potential Earning</p>
           <p className="checkout-value">
             {`${formatNumberToLocaleString(

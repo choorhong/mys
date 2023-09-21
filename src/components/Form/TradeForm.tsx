@@ -12,6 +12,8 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { ShareDataType } from "../../interfaces";
 import { formatNumberToLocaleString } from "../../utils";
 
+import "../../App.css";
+
 type PropType = {
   children?: React.ReactNode;
   items?: ShareDataType;
@@ -136,13 +138,13 @@ const TradeForm = (props: PropType) => {
           />
         )}
       />
-      <div style={{ margin: "1rem 0.5rem" }}>
+      <div className="trade-form-info">
         Cost of share: {formatNumberToLocaleString(costOfShare)}
       </div>
-      <div style={{ margin: "1rem 0.5rem" }}>
+      <div className="trade-form-info">
         Cost of Transaction: {formatNumberToLocaleString(trxCost)}
       </div>
-      <div style={{ margin: "1rem 0.5rem" }}>
+      <div className="trade-form-info">
         Current Account Balance: {formatNumberToLocaleString(balance)}
       </div>
 
