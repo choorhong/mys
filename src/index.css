@@ -31,6 +31,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  .MuiPaper-root {
+    background-color: #9a9a9a;
+  }
+
+  .MuiDialog-container {
+    .MuiPaper-root {
+      background-color: rgb(176, 176, 176);
+    }
+    .MuiAppBar-root {
+      background-color: #242424;
+    }
+  }
 }
 
 a {
