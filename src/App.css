@@ -1,0 +1,100 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
+
+.paper {
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.share-container {
+  display: flex;
+}
+
+.share-ticker-wrapper {
+  flex-grow: 0.6;
+  flex-basis: 60%;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.share-ticker {
+  margin: 0;
+}
+
+.share-company {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.75rem;
+}
+
+.share-price-wrapper {
+  flex-grow: 0.4;
+  flex-basis: 40%;
+  position: relative;
+}
+
+.share-price {
+  position: absolute;
+  background-color: green;
+  border-radius: 0.25rem;
+  text-align: center;
+  padding: 0.25rem;
+  width: 50%;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.trade-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+.checkout-label {
+  display: inline-block;
+  width: 35%;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.checkout-value {
+  display: inline-block;
+  margin: 0;
+  overflow: hidden;
+}
