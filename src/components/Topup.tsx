@@ -9,7 +9,9 @@ import { ShareDataType } from "../interfaces";
 type PropType = {
   children?: React.ReactNode;
   items?: ShareDataType;
-  onHandleNextStep: (obj: string) => void;
+  onHandleNextStep: (
+    obj: { purchase: boolean; costOfTransaction: number } | string
+  ) => void;
 };
 
 const Topup = (props: PropType) => {
@@ -52,6 +54,11 @@ const Topup = (props: PropType) => {
     onHandleNextStep("back");
   };
 
+  const handleNextStep = () => {
+    if (!costOfTransaction) return;
+    onHandleNextStep({ purchase: true, costOfTransaction: +costOfTransaction });
+  };
+
   const reloadAmount = useMemo(() => {
     if (!costOfTransaction) return 0;
     if (balance - Number(costOfTransaction) > 0) return 0;
@@ -89,9 +96,9 @@ const Topup = (props: PropType) => {
       </div>
 
       {balance - Number(costOfTransaction) > 0 ? (
-        <div style={{ margin: "0.5rem 0" }}>
+        <div style={{ margin: "0.5rem 0" }} onClick={handleNextStep}>
           <Button type="submit" variant="contained">
-            Next
+            Check out
           </Button>
         </div>
       ) : null}
