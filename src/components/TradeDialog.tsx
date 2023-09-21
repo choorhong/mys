@@ -19,6 +19,7 @@ import { ProfileShareContext } from "../context/profile-share";
 import Checkout from "./Checkout";
 import { ShareInfoType } from "../interfaces";
 import { useNavigate, useParams } from "react-router-dom";
+import Topup from "./Topup";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -111,7 +112,7 @@ export default function TradeDialog(props: PropType) {
     }
 
     if (step === "topUp") {
-      return <>Top up</>;
+      return <Topup onHandleNextStep={handleNextStep} />;
     }
 
     return (
@@ -141,7 +142,11 @@ export default function TradeDialog(props: PropType) {
               <CloseIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-              Close
+              {step === "checkOut"
+                ? "Check out"
+                : step === "topUp"
+                ? "Reload"
+                : "Trade"}
             </Typography>
           </Toolbar>
         </AppBar>

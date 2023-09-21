@@ -11,7 +11,7 @@ export const ProfileShareContext = createContext<ProfileShareContextType>(
 );
 
 type ActionType = {
-  type: "INITIAL" | "PURCHASE" | "SELL";
+  type: "INITIAL" | "PURCHASE" | "SELL" | "TOPUP";
   response: Record<string, any>;
 };
 
@@ -19,6 +19,7 @@ const reducer = (state: StateType, action: ActionType) => {
   switch (action.type) {
     case "INITIAL":
       return { ...state, sharesOwned: action.response };
+
     case "PURCHASE": {
       let newTotalSharesOwned = 0;
       let newAvgCost = 0;
@@ -99,12 +100,17 @@ const reducer = (state: StateType, action: ActionType) => {
       return newState;
     }
 
+    case "TOPUP": {
+      const newBalance = state.balance + action.response.totalCostOfTransaction;
+      return { ...state, balance: newBalance };
+    }
+
     default:
       return state;
   }
 };
 
-const initialState = { sharesOwned: {}, balance: 1_000_000 };
+const initialState = { sharesOwned: {}, balance: 50 };
 type StateType = { sharesOwned: Record<string, any>; balance: number };
 
 type TransactionType = {
@@ -137,12 +143,16 @@ const ProfileShareContextProvider: FC<{ children: React.ReactNode }> = (
 
     if (action === "PURCHASE") {
       // response = { totalCostOfTransaction: 22.22, unit: 1, ticker: 'IBM' }
-      console.log("purchase??");
       dispatch({ type: "PURCHASE", response: response });
     }
     if (action === "SELL") {
       // response = { totalCostOfTransaction: 22.22, unit: 1, ticker: 'IBM' }
       dispatch({ type: "SELL", response: response });
+    }
+
+    if (action === "TOPUP") {
+      // response = { totalCostOfTransaction: 22.22, ...// the rest does not matter }
+      dispatch({ type: "TOPUP", response: response });
     }
   };
 
