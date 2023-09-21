@@ -18,7 +18,7 @@ import TradeForm from "./Form/TradeForm";
 import { ProfileShareContext } from "../context/profile-share";
 import Checkout from "./Checkout";
 import { ShareInfoType } from "../interfaces";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -32,7 +32,7 @@ const Transition = React.forwardRef(function Transition(
 type PropType = {
   children?: React.ReactNode;
   visible: boolean;
-  onToggleVisibility: (e: any) => void;
+  onToggleVisibility: () => void;
 };
 
 export default function TradeDialog(props: PropType) {
@@ -41,11 +41,19 @@ export default function TradeDialog(props: PropType) {
   const [state, setState] = useState<{
     result: ShareInfoType;
   }>();
-  console.log("state", state);
+
   const profileShareContext = useContext(ProfileShareContext);
   const { visible, onToggleVisibility } = props;
 
+  const navigate = useNavigate();
+
   const [step, setStep] = useState<string>();
+
+  const handleToggleVisibility = useCallback(() => {
+    navigate(`/${ticker}`);
+    setStep("");
+    onToggleVisibility();
+  }, [navigate, onToggleVisibility, ticker]);
 
   useEffect(() => {
     (async () => {
@@ -97,6 +105,7 @@ export default function TradeDialog(props: PropType) {
         <Checkout
           onHandleNextStep={handleNextStep}
           items={state?.result?.data}
+          onHandleToggleVisibility={handleToggleVisibility}
         />
       );
     }
@@ -111,14 +120,14 @@ export default function TradeDialog(props: PropType) {
         items={state?.result?.data}
       />
     );
-  }, [step, handleNextStep, state?.result?.data]);
+  }, [step, handleNextStep, state?.result?.data, handleToggleVisibility]);
 
   return (
     <div>
       <Dialog
         fullScreen
         open={visible}
-        onClose={onToggleVisibility}
+        onClose={handleToggleVisibility}
         TransitionComponent={Transition}
       >
         <AppBar sx={{ position: "relative" }}>
@@ -126,7 +135,7 @@ export default function TradeDialog(props: PropType) {
             <IconButton
               edge="start"
               color="inherit"
-              onClick={onToggleVisibility}
+              onClick={handleToggleVisibility}
               aria-label="close"
             >
               <CloseIcon />

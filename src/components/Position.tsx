@@ -10,8 +10,6 @@ const Position = (props: PropsType) => {
   const { items = {} } = props;
   const { sharesOwned } = items;
 
-  console.log("item", items);
-
   return (
     <fieldset>
       <legend>YOUR POSITION</legend>

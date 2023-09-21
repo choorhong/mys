@@ -10,10 +10,15 @@ type PropType = {
   children?: React.ReactNode;
   items?: ShareDataType;
   onHandleNextStep: (obj: string) => void;
+  onHandleToggleVisibility: () => void;
 };
 
 const Checkout = (props: PropType) => {
-  const { onHandleNextStep, items = {} as ShareDataType } = props;
+  const {
+    onHandleNextStep,
+    onHandleToggleVisibility,
+    items = {} as ShareDataType,
+  } = props;
   const { high, low } = items;
 
   const [params] = useSearchParams();
@@ -22,7 +27,7 @@ const Checkout = (props: PropType) => {
   const costOfTransaction = params.get("costOfTransaction");
 
   const profileShareContext = useContext(ProfileShareContext);
-  const { balance } = profileShareContext;
+  const { balance, handleTransaction } = profileShareContext;
 
   console.log("profileShareContext", profileShareContext);
 
@@ -52,7 +57,32 @@ const Checkout = (props: PropType) => {
     onHandleNextStep("back");
   };
 
-  const handleExecuteTrade = () => {};
+  const handleExecuteTrade = () => {
+    if (!tradeType || !unit || !costOfTransaction || !ticker) return;
+    if (tradeType === "purchase") {
+      handleTransaction({
+        action: "PURCHASE",
+        response: {
+          unit: +unit,
+          totalCostOfTransaction: +costOfTransaction,
+          ticker,
+        },
+      });
+    }
+
+    if (tradeType === "sell") {
+      handleTransaction({
+        action: "SELL",
+        response: {
+          unit: +unit,
+          totalCostOfTransaction: +costOfTransaction,
+          ticker,
+        },
+      });
+    }
+
+    onHandleToggleVisibility();
+  };
 
   return (
     <div style={{ margin: "0.5rem" }}>

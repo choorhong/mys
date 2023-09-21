@@ -9,9 +9,9 @@ import TradeDialog from "./TradeDialog";
 const TradeButton = () => {
   const [visible, setVisible] = React.useState(false);
 
-  const handleToggleVisibility = () => {
+  const handleToggleVisibility = React.useCallback(() => {
     setVisible((prevState) => !prevState);
-  };
+  }, []);
 
   return (
     <div>
