@@ -28,8 +28,9 @@ export default function TextInput(props: PropType) {
   };
 
   return (
-    <FormControl className="form-input" sx={{ margin: "0.5rem" }}>
+    <div className="checkout-container">
       <TextField
+        className="form-input"
         {...field}
         onChange={handleChange}
         error={!!errorMsg(errors, name)}
@@ -41,6 +42,6 @@ export default function TextInput(props: PropType) {
           inputProps: { min: 0 },
         }}
       />
-    </FormControl>
+    </div>
   );
 }

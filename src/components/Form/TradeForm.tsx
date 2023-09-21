@@ -138,17 +138,28 @@ const TradeForm = (props: PropType) => {
           />
         )}
       />
-      <div className="trade-form-info">
-        Cost of share: {formatNumberToLocaleString(costOfShare)}
-      </div>
-      <div className="trade-form-info">
-        Cost of Transaction: {formatNumberToLocaleString(trxCost)}
-      </div>
-      <div className="trade-form-info">
-        Current Account Balance: {formatNumberToLocaleString(balance)}
-      </div>
+      <div className="checkout-container">
+        <div className="checkout-item-wrapper">
+          <p className="checkout-label">Cost of share:</p>
+          <p className="checkout-value">
+            {formatNumberToLocaleString(costOfShare)}
+          </p>
+        </div>
 
-      <div style={{ margin: "0.5rem" }}>
+        <div className="checkout-item-wrapper">
+          <p className="checkout-label">Cost of Transaction:</p>
+          <p className="checkout-value">
+            {formatNumberToLocaleString(trxCost)}
+          </p>
+        </div>
+
+        <div className="checkout-item-wrapper">
+          <p className="checkout-label">Current Account Balance:</p>
+          <p className="checkout-value">
+            {formatNumberToLocaleString(balance)}
+          </p>
+        </div>
+
         <Button type="submit" variant="contained">
           Next
         </Button>

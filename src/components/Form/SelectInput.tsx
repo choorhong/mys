@@ -32,20 +32,18 @@ export default function SelectInput(props: PropType) {
   const { name } = field;
 
   return (
-    <FormControl
-      className="form-input"
-      sx={{ margin: "0.5rem" }}
-      error={!!errorMsg(errors, name)}
-    >
-      <InputLabel>Trade</InputLabel>
-      <Select label={label} {...field}>
-        <MenuItem value="" hidden>
-          <em>None</em>
-        </MenuItem>
-        <MenuItem value={"purchase"}>Purchase</MenuItem>
-        {totalSharesOwned ? <MenuItem value={"sell"}>Sell</MenuItem> : null}
-      </Select>
-      <FormHelperText>{errorMsg(errors, name)}</FormHelperText>
-    </FormControl>
+    <div className="checkout-container">
+      <FormControl className="form-input" error={!!errorMsg(errors, name)}>
+        <InputLabel>Trade</InputLabel>
+        <Select label={label} {...field}>
+          <MenuItem value="" hidden>
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="purchase">Purchase</MenuItem>
+          {totalSharesOwned ? <MenuItem value="sell">Sell</MenuItem> : null}
+        </Select>
+        <FormHelperText error>{errorMsg(errors, name)}</FormHelperText>
+      </FormControl>
+    </div>
   );
 }
