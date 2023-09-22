@@ -9,6 +9,7 @@ export const item = {
       low: 535111.0,
       close: 537780.0,
       volume: 6600,
+      previousDayClose: 537150.0,
     },
     {
       timestamp: "2023-09-28",
@@ -17,6 +18,7 @@ export const item = {
       low: 531294.0,
       close: 537150.0,
       volume: 6400,
+      previousDayClose: 531840.0,
     },
     {
       timestamp: "2023-09-27",
@@ -25,6 +27,7 @@ export const item = {
       low: 530865.0,
       close: 531840.0,
       volume: 6800,
+      previousDayClose: 534700.0,
     },
     {
       timestamp: "2023-09-26",
@@ -33,6 +36,7 @@ export const item = {
       low: 531000.0,
       close: 534700.0,
       volume: 9200,
+      previousDayClose: 535817.0,
     },
     {
       timestamp: "2023-09-25",
@@ -41,6 +45,7 @@ export const item = {
       low: 531970.0,
       close: 535817.0,
       volume: 7200,
+      previousDayClose: 535821.0,
     },
     {
       timestamp: "2023-09-22",
@@ -49,6 +54,7 @@ export const item = {
       low: 529000.0,
       close: 535821.0,
       volume: 6800,
+      previousDayClose: 551030.0,
     },
     {
       timestamp: "2023-09-21",
@@ -57,6 +63,7 @@ export const item = {
       low: 550500.0,
       close: 551030.0,
       volume: 7800,
+      previousDayClose: 556580.0,
     },
     {
       timestamp: "2023-09-20",
@@ -65,6 +72,7 @@ export const item = {
       low: 556250.0,
       close: 556580.0,
       volume: 7900,
+      previousDayClose: 563073.0,
     },
     {
       timestamp: "2023-09-19",
@@ -73,6 +81,7 @@ export const item = {
       low: 559100.0,
       close: 563073.0,
       volume: 7800,
+      previousDayClose: 562800.0,
     },
     {
       timestamp: "2023-09-18",
@@ -81,6 +90,7 @@ export const item = {
       low: 557962.0,
       close: 562800.0,
       volume: 10100,
+      previousDayClose: 559500.0,
     },
     {
       timestamp: "2023-09-15",
@@ -89,6 +99,7 @@ export const item = {
       low: 557471.0,
       close: 559500.0,
       volume: 8300,
+      previousDayClose: 561740,
     },
     {
       timestamp: "2023-09-14",
@@ -97,6 +108,7 @@ export const item = {
       low: 558568.0,
       close: 561740.0,
       volume: 7600,
+      previousDayClose: 557955.0,
     },
     {
       timestamp: "2023-09-13",
@@ -105,6 +117,7 @@ export const item = {
       low: 555001.0,
       close: 557955.0,
       volume: 7700,
+      previousDayClose: 557415.0,
     },
     {
       timestamp: "2023-09-12",
@@ -113,6 +126,7 @@ export const item = {
       low: 554000.0,
       close: 557415.0,
       volume: 8300,
+      previousDayClose: 555309.0,
     },
     {
       timestamp: "2023-09-11",
@@ -121,6 +135,7 @@ export const item = {
       low: 552243.0,
       close: 555309.0,
       volume: 10000,
+      previousDayClose: 551405.0,
     },
     {
       timestamp: "2023-09-08",
@@ -129,6 +144,7 @@ export const item = {
       low: 547336.0,
       close: 551405.0,
       volume: 7400,
+      previousDayClose: 548930.0,
     },
     {
       timestamp: "2023-09-07",
@@ -137,6 +153,7 @@ export const item = {
       low: 544902.0,
       close: 548930.0,
       volume: 7400,
+      previousDayClose: 548660.0,
     },
     {
       timestamp: "2023-09-06",
@@ -145,6 +162,7 @@ export const item = {
       low: 544520.0,
       close: 548660.0,
       volume: 7600,
+      previousDayClose: 546627.0,
     },
     {
       timestamp: "2023-09-05",
@@ -153,6 +171,7 @@ export const item = {
       low: 546000.0,
       close: 546627.0,
       volume: 10700,
+      previousDayClose: 550000.0,
     },
     {
       timestamp: "2023-09-01",
@@ -161,6 +180,7 @@ export const item = {
       low: 546454.0,
       close: 550000.0,
       volume: 8200,
+      previousDayClose: 0,
     },
   ],
 };

@@ -9,6 +9,7 @@ export const item = {
       low: 145.53,
       close: 145.99,
       volume: 6234033,
+      previousDayClose: 147.35,
     },
     {
       timestamp: "2023-09-28",
@@ -17,6 +18,7 @@ export const item = {
       low: 146.48,
       close: 147.35,
       volume: 2723200,
+      previousDayClose: 146.55,
     },
     {
       timestamp: "2023-09-27",
@@ -25,6 +27,7 @@ export const item = {
       low: 145.92,
       close: 146.55,
       volume: 2627999,
+      previousDayClose: 146.3,
     },
     {
       timestamp: "2023-09-26",
@@ -33,6 +36,7 @@ export const item = {
       low: 145.8,
       close: 146.3,
       volume: 4457695,
+      previousDayClose: 148.38,
     },
     {
       timestamp: "2023-09-25",
@@ -41,6 +45,7 @@ export const item = {
       low: 147.58,
       close: 148.38,
       volume: 3273720,
+      previousDayClose: 147.68,
     },
     {
       timestamp: "2023-09-22",
@@ -49,6 +54,7 @@ export const item = {
       low: 147.26,
       close: 147.68,
       volume: 3722927,
+      previousDayClose: 147.52,
     },
     {
       timestamp: "2023-09-21",
@@ -57,6 +63,7 @@ export const item = {
       low: 147.4,
       close: 147.52,
       volume: 3333040,
+      previousDayClose: 148.06,
     },
     {
       timestamp: "2023-09-20",
@@ -65,6 +72,7 @@ export const item = {
       low: 147.12,
       close: 148.06,
       volume: 2932203,
+      previousDayClose: 148.13,
     },
     {
       timestamp: "2023-09-19",
@@ -73,6 +81,7 @@ export const item = {
       low: 147.5719,
       close: 148.13,
       volume: 3731281,
+      previousDayClose: 147.94,
     },
     {
       timestamp: "2023-09-18",
@@ -81,6 +90,7 @@ export const item = {
       low: 146.92,
       close: 147.94,
       volume: 2727796,
+      previousDayClose: 140.66,
     },
     {
       timestamp: "2023-09-15",
@@ -89,6 +99,7 @@ export const item = {
       low: 140.6,
       close: 140.66,
       volume: 3742058,
+      previousDayClose: 140.64,
     },
     {
       timestamp: "2023-09-14",
@@ -97,6 +108,7 @@ export const item = {
       low: 140.56,
       close: 140.64,
       volume: 3285347,
+      previousDayClose: 141.87,
     },
     {
       timestamp: "2023-09-13",
@@ -105,6 +117,7 @@ export const item = {
       low: 141.2,
       close: 141.87,
       volume: 3656559,
+      previousDayClose: 141.91,
     },
     {
       timestamp: "2023-09-12",
@@ -113,6 +126,7 @@ export const item = {
       low: 141.802,
       close: 141.91,
       volume: 4226563,
+      previousDayClose: 143.12,
     },
     {
       timestamp: "2023-09-11",
@@ -121,6 +135,7 @@ export const item = {
       low: 142.205,
       close: 143.12,
       volume: 2526433,
+      previousDayClose: 143.25,
     },
     {
       timestamp: "2023-09-08",
@@ -129,6 +144,7 @@ export const item = {
       low: 142.69,
       close: 143.25,
       volume: 4735763,
+      previousDayClose: 142.49,
     },
     {
       timestamp: "2023-09-07",
@@ -137,6 +153,7 @@ export const item = {
       low: 142.3,
       close: 142.49,
       volume: 4073038,
+      previousDayClose: 145.91,
     },
     {
       timestamp: "2023-09-06",
@@ -145,6 +162,7 @@ export const item = {
       low: 144.11,
       close: 145.91,
       volume: 4654582,
+      previousDayClose: 146.18,
     },
     {
       timestamp: "2023-09-05",
@@ -153,6 +171,7 @@ export const item = {
       low: 144.93,
       close: 146.18,
       volume: 3438654,
+      previousDayClose: 144.24,
     },
     {
       timestamp: "2023-09-04",
@@ -161,6 +180,7 @@ export const item = {
       low: 143.99,
       close: 144.24,
       volume: 4223204,
+      previousDayClose: 0,
     },
     {
       timestamp: "2023-09-01",
@@ -169,30 +189,7 @@ export const item = {
       low: 143.3116,
       close: 144.45,
       volume: 3952640,
-    },
-    {
-      timestamp: "2023-08-02",
-      open: 142.78,
-      high: 144.3,
-      low: 142.31,
-      close: 144.17,
-      volume: 4959381,
-    },
-    {
-      timestamp: "2023-08-01",
-      open: 144.25,
-      high: 144.48,
-      low: 142.17,
-      close: 143.33,
-      volume: 4798703,
-    },
-    {
-      timestamp: "2023-07-31",
-      open: 143.81,
-      high: 144.605,
-      low: 143.53,
-      close: 144.18,
-      volume: 6138902,
+      previousDayClose: 0,
     },
   ],
 };
