@@ -28,8 +28,6 @@ const Topup = (props: PropType) => {
   const { ticker = "" } = useParams();
 
   const handleClick = () => {
-    console.log("inputr", inputRef.current);
-
     if (!inputRef.current) {
       setError("Required");
     }

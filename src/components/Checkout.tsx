@@ -29,8 +29,6 @@ const Checkout = (props: PropType) => {
   const profileShareContext = useContext(ProfileShareContext);
   const { balance, handleTransaction } = profileShareContext;
 
-  console.log("profileShareContext", profileShareContext);
-
   const { ticker = "" } = useParams();
   const averageCostOfOwnedShare =
     profileShareContext?.sharesOwned?.[ticker]?.sharesOwned?.avgCost;

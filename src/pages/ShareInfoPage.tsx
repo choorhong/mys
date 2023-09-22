@@ -12,7 +12,6 @@ const ShareInfoPage = () => {
   const { ticker } = useParams();
   const profileShareContext = useContext(ProfileShareContext);
   const [state, setState] = useState<{ result: ShareInfoType | undefined }>();
-
   const { sharesOwned } = profileShareContext;
 
   useEffect(() => {
@@ -37,7 +36,7 @@ const ShareInfoPage = () => {
 
       <ShareStat items={state?.result?.data} />
 
-      {ticker && sharesOwned?.[ticker] ? (
+      {ticker && sharesOwned?.[ticker]?.sharesOwned?.totalSharesOwned ? (
         <Position items={sharesOwned[ticker]} />
       ) : null}
 

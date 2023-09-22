@@ -8,7 +8,7 @@ const SharesInfoPage = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("http://localhost:8080/carpark-search", {
+      const response = await fetch("http://localhost:8080/shares-search", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
