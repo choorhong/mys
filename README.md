@@ -1,27 +1,24 @@
-# React + TypeScript + Vite
+# Mys Trade with React + TypeScript + Vite + MSW
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite.
 
-Currently, two official plugins are available:
+_Please do not open the developer console while running the app. It may cause unexpected behavior due to MSW integration_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Run the project with docker-compose (recommended):
 
-## Expanding the ESLint configuration
+1. Run `docker-compose up -d` in the terminal.
+2. Open [http://localhost:3030](http://localhost:3030) to view it in the browser.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Run the project with docker commands:
 
-- Configure the top-level `parserOptions` property like this:
+1. Run `docker build -t mys_image .` in the terminal. For example:
+2. Run `docker run -p 5178:5173 --name mys_container -d --rm -it mys_image` in the terminal.
+3. Open [http://localhost:5178](http://localhost:5178) to view it in the browser.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Run the project without docker commands:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+_Please be aware that the node version installed in your host machine. Required minimum node version of 15!_
+
+1. Install project dependencies with `npm ci`.
+2. To start the project locally, run the `dev` script in `package.json`.
+3. Follow the instruction in the terminal to access the development server in the browser.
