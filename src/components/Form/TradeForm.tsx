@@ -138,7 +138,7 @@ const TradeForm = (props: PropType) => {
           />
         )}
       />
-      <div className="checkout-container">
+      <div className="general-container">
         <div className="checkout-item-wrapper">
           <p className="checkout-label">Cost of share:</p>
           <p className="checkout-value">

@@ -32,7 +32,7 @@ export default function SelectInput(props: PropType) {
   const { name } = field;
 
   return (
-    <div className="checkout-container">
+    <div className="general-container">
       <FormControl className="form-input" error={!!errorMsg(errors, name)}>
         <InputLabel>Trade</InputLabel>
         <Select label={label} {...field}>

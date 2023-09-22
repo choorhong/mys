@@ -83,7 +83,7 @@ const Checkout = (props: PropType) => {
   };
 
   return (
-    <div className="checkout-container">
+    <div className="general-container">
       <div className="checkout-item-wrapper">
         <p className="checkout-label">Trade Type</p>
         <p className="checkout-value">{capitalizeFirstLetter(tradeType)}</p>

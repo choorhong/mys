@@ -64,7 +64,7 @@ const Topup = (props: PropType) => {
   }, [balance, costOfTransaction]);
 
   return (
-    <div className="checkout-container">
+    <div className="general-container">
       <div className="checkout-item-wrapper">
         <p className="checkout-label"> Minimum reload amount required:</p>
         <p className="checkout-value">

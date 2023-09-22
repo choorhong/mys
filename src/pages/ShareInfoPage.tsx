@@ -33,7 +33,7 @@ const ShareInfoPage = () => {
     <>
       <ResponsiveAppBar />
 
-      <div className="checkout-container">
+      <div className="general-container">
         <div className="share-ticker">
           {state?.result?.name} ({state?.result?.ticker})
         </div>

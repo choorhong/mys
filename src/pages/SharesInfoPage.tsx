@@ -24,7 +24,7 @@ const SharesInfoPage = () => {
   return (
     <>
       <ResponsiveAppBar />
-      <div className="checkout-container">
+      <div className="general-container">
         <Grid container spacing={2}>
           {state?.result
             ? state.result.map((item) => (

@@ -28,7 +28,7 @@ export default function TextInput(props: PropType) {
   };
 
   return (
-    <div className="checkout-container">
+    <div className="general-container">
       <TextField
         className="form-input"
         {...field}
