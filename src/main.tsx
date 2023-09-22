@@ -18,10 +18,6 @@ const router = createBrowserRouter([
     path: "/:ticker",
     element: <ShareInfoPage />,
   },
-  // {
-  //   path: "/profile",
-  //   element: <ProfileForm />,
-  // },
 ]);
 
 async function prepare() {

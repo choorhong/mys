@@ -110,7 +110,7 @@ const reducer = (state: StateType, action: ActionType) => {
   }
 };
 
-const initialState = { sharesOwned: {}, balance: 50 };
+const initialState = { sharesOwned: {}, balance: 1_000 };
 type StateType = { sharesOwned: Record<string, any>; balance: number };
 
 type TransactionType = {
