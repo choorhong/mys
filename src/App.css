@@ -43,6 +43,14 @@
   transform: translateY(-50%);
 }
 
+.share-price-high {
+  background-color: green;
+}
+
+.share-price-low {
+  background-color: red;
+}
+
 .trade-button {
   position: fixed;
   bottom: 1rem;

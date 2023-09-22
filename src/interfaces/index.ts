@@ -5,6 +5,7 @@ export type ShareDataType = {
   low: number;
   close: number;
   volume: number;
+  previousDayClose: number;
 };
 
 export type ShareInfoType = {

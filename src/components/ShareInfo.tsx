@@ -17,7 +17,7 @@ const ShareInfo = (props: PropsType) => {
   const navigate = useNavigate();
   const { item } = props;
   const { data = {} as ShareDataType } = item;
-  const { high, low } = data;
+  const { high, low, previousDayClose } = data;
 
   const profileShareContext = useContext(ProfileShareContext);
 
@@ -25,11 +25,20 @@ const ShareInfo = (props: PropsType) => {
     profileShareContext?.sharesOwned?.[item.ticker]?.sharesOwned
       ?.totalSharesOwned;
 
-  const avgPrice = useMemo<number | string>(() => {
-    if (!high || !low) return "-";
+  const indices = useMemo(() => {
+    if (!high || !low)
+      return {
+        avgPrice: "-",
+        isHigherThanPreviousDayClose: true,
+      };
     const avgP = (high + low) / 2;
-    return formatNumberToLocaleString(avgP);
-  }, [high, low]);
+
+    const isHigherThanPreviousDayClose = avgP - previousDayClose >= 0;
+    return {
+      avgPrice: formatNumberToLocaleString(avgP),
+      isHigherThanPreviousDayClose,
+    };
+  }, [high, low, previousDayClose]);
 
   const handleClick = (route: string) => {
     const encodedUrl = encodeURIComponent(route);
@@ -58,7 +67,15 @@ const ShareInfo = (props: PropsType) => {
             <div className="share-ticker share-company">{subTitle}</div>
           </div>
           <div className="share-price-wrapper">
-            <div className="share-price">{avgPrice}</div>
+            <div
+              className={`share-price ${
+                indices.isHigherThanPreviousDayClose
+                  ? "share-price-high"
+                  : "share-price-low"
+              }`}
+            >
+              {indices.avgPrice}
+            </div>
           </div>
         </div>
       </Paper>
