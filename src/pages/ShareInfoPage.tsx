@@ -7,6 +7,7 @@ import { ProfileShareContext } from "../context/profile-share";
 import ShareStat from "../components/ShareStat";
 import Position from "../components/Position";
 import TradeButton from "../components/TradeButton";
+import ResponsiveAppBar from "../components/AppBar";
 
 const ShareInfoPage = () => {
   const { ticker } = useParams();
@@ -29,19 +30,23 @@ const ShareInfoPage = () => {
   }, [ticker]);
 
   return (
-    <div style={{ padding: "0 0.5rem " }}>
-      <div className="share-ticker">
-        {state?.result?.name} ({state?.result?.ticker})
+    <>
+      <ResponsiveAppBar />
+
+      <div className="checkout-container">
+        <div className="share-ticker">
+          {state?.result?.name} ({state?.result?.ticker})
+        </div>
+
+        <ShareStat items={state?.result?.data} />
+
+        {ticker && sharesOwned?.[ticker]?.sharesOwned?.totalSharesOwned ? (
+          <Position items={sharesOwned[ticker]} />
+        ) : null}
+
+        <TradeButton />
       </div>
-
-      <ShareStat items={state?.result?.data} />
-
-      {ticker && sharesOwned?.[ticker]?.sharesOwned?.totalSharesOwned ? (
-        <Position items={sharesOwned[ticker]} />
-      ) : null}
-
-      <TradeButton />
-    </div>
+    </>
   );
 };
 

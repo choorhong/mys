@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import ShareInfo from "../components/ShareInfo";
 import { ShareInfoType } from "../interfaces";
+import ResponsiveAppBar from "../components/AppBar";
 
 const SharesInfoPage = () => {
   const [state, setState] = useState<{ result: ShareInfoType[] | undefined }>();
@@ -21,13 +22,18 @@ const SharesInfoPage = () => {
   }, []);
 
   return (
-    <Grid container spacing={2}>
-      {state?.result
-        ? state.result.map((item) => (
-            <ShareInfo key={`${item.name}-${item.ticker}`} item={item} />
-          ))
-        : null}
-    </Grid>
+    <>
+      <ResponsiveAppBar />
+      <div className="checkout-container">
+        <Grid container spacing={2}>
+          {state?.result
+            ? state.result.map((item) => (
+                <ShareInfo key={`${item.name}-${item.ticker}`} item={item} />
+              ))
+            : null}
+        </Grid>
+      </div>
+    </>
   );
 };
 
