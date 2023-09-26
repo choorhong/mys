@@ -33,12 +33,11 @@ const Checkout = (props: PropType) => {
   const averageCostOfOwnedShare =
     profileShareContext?.sharesOwned?.[ticker]?.sharesOwned?.avgCost;
 
-  const costOfShare = (low + high) / 2;
-
+  const currentCostOfShare = (low + high) / 2;
   const potentialEarning = useMemo(() => {
     let pe = 0;
     if (tradeType === "sell") {
-      pe = averageCostOfOwnedShare - costOfShare;
+      pe = currentCostOfShare - averageCostOfOwnedShare;
     }
 
     if (pe > 0 && unit) {
@@ -49,7 +48,7 @@ const Checkout = (props: PropType) => {
     }
 
     return false;
-  }, [averageCostOfOwnedShare, costOfShare, tradeType, unit]);
+  }, [averageCostOfOwnedShare, currentCostOfShare, tradeType, unit]);
 
   const handleBack = () => {
     onHandleNextStep("back");

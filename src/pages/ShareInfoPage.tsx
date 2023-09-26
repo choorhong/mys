@@ -41,7 +41,7 @@ const ShareInfoPage = () => {
         <ShareStat items={state?.result?.data} />
 
         {ticker && sharesOwned?.[ticker]?.sharesOwned?.totalSharesOwned ? (
-          <Position items={sharesOwned[ticker]} />
+          <Position items={sharesOwned[ticker]} info={state?.result?.data} />
         ) : null}
 
         <TradeButton />

@@ -90,7 +90,7 @@ const Topup = (props: PropType) => {
       />
       <div className="checkout-item-wrapper" style={{ marginTop: "0.5rem" }}>
         <p className="checkout-label">Current Account Balance:</p>
-        <p className="checkout-value">{balance.toLocaleString()}</p>
+        <p className="checkout-value">{formatNumberToLocaleString(balance)}</p>
       </div>
 
       {balance - Number(costOfTransaction) > 0 ? (
