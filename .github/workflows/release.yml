@@ -22,11 +22,11 @@ jobs:
 
       # Step 3: Install semantic-release and plugins
       - name: Install semantic-release
-        run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/npm
+        run: npm install -g semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/npm
 
       # Step 4: Run semantic-release
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          semantic-release --branches master --no-npm-publish --assets "package.json,CHANGELOG.md"
+          semantic-release
