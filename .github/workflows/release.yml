@@ -43,7 +43,4 @@ jobs:
             ],
             "@semantic-release/github"
           ]'
-        run: |
-          echo $BRANCHES > branches.json
-          echo $PLUGINS > plugins.json
-          semantic-release -e semantic-release -b branches.json -p plugins.json
+        run: semantic-release 
