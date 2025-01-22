@@ -24,6 +24,7 @@ jobs:
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_PUBLISH: 'false'
         run: |
           semantic-release \
             --branches master \
@@ -33,4 +34,5 @@ jobs:
             @semantic-release/changelog \
             @semantic-release/git \
             @semantic-release/github \
-            ["@semantic-release/npm",{"npmPublish":false}]
+            @semantic-release/npm \
+            --no-npm-publish
