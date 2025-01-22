@@ -10,17 +10,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+      # Step 3: Install semantic-release and plugins
       - name: Install semantic-release
         run: npm install -g semantic-release @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/npm
 
+      # Step 4: Run semantic-release
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -28,10 +32,11 @@ jobs:
           semantic-release \
             --branches master \
             --plugins \
-            @semantic-release/commit-analyzer \
-            @semantic-release/release-notes-generator \
-            @semantic-release/changelog \
-            @semantic-release/npm \
-            @semantic-release/git@{"assets":["package.json","CHANGELOG.md"]} \
-            @semantic-release/github
-            --no-npm-publish
+              "@semantic-release/commit-analyzer" \
+              "@semantic-release/release-notes-generator" \
+              "@semantic-release/changelog" \
+              "@semantic-release/npm" \
+              --no-npm-publish \
+              "@semantic-release/git" \
+              --assets "package.json,CHANGELOG.md" \
+              "@semantic-release/github"
