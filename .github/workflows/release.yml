@@ -32,6 +32,6 @@ jobs:
             @semantic-release/release-notes-generator \
             @semantic-release/changelog \
             @semantic-release/npm \
-            --no-npm-publish \
             @semantic-release/git@{"assets":["package.json","CHANGELOG.md"]} \
             @semantic-release/github
+            --no-npm-publish
