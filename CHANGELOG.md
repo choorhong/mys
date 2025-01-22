@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/choorhong/mys/compare/v1.0.5...v1.0.6) (2025-01-22)
+
+
+### Bug Fixes
+
+* **github workflow:** Update [@semantic-release](https://github.com/semantic-release) workflow ([f3c1a8e](https://github.com/choorhong/mys/commit/f3c1a8e227904283d029650d557168c172f4e1d8))
+
 ## [1.0.4](https://github.com/choorhong/mys/compare/v1.0.3...v1.0.4) (2025-01-22)
 
 
