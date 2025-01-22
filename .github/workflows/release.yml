@@ -29,14 +29,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          semantic-release \
-            --branches master \
-            --plugins \
-              "@semantic-release/commit-analyzer" \
-              "@semantic-release/release-notes-generator" \
-              "@semantic-release/changelog" \
-              "@semantic-release/npm" \
-              --no-npm-publish \
-              "@semantic-release/git" \
-              --assets "package.json,CHANGELOG.md" \
-              "@semantic-release/github"
+          semantic-release --branches master --no-npm-publish --assets "package.json,CHANGELOG.md"
