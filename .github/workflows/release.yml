@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - production
 
 jobs:
   release:
@@ -29,18 +28,4 @@ jobs:
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCHES: '["master", "production"]'
-          PLUGINS: '[
-            "@semantic-release/commit-analyzer",
-            "@semantic-release/release-notes-generator",
-            "@semantic-release/changelog",
-            "@semantic-release/npm",
-            [
-              "@semantic-release/git",
-              {
-                "assets": ["package.json", "CHANGELOG.md"]
-              }
-            ],
-            "@semantic-release/github"
-          ]'
         run: semantic-release 
