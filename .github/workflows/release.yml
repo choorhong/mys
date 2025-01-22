@@ -24,7 +24,6 @@ jobs:
       - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_PUBLISH: 'false'
         run: |
           semantic-release \
             --branches master \
@@ -32,7 +31,6 @@ jobs:
             @semantic-release/commit-analyzer \
             @semantic-release/release-notes-generator \
             @semantic-release/changelog \
-            @semantic-release/git \
-            @semantic-release/github \
-            @semantic-release/npm \
-            --no-npm-publish
+            ["@semantic-release/npm",{"npmPublish":false,"pkgRoot":"."}] \
+            ["@semantic-release/git",{"assets":["package.json","CHANGELOG.md"]}] \
+            @semantic-release/github
