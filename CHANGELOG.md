@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/choorhong/mys/compare/v1.0.3...v1.0.4) (2025-01-22)
+
+
+### Bug Fixes
+
+* **github workflow:** Update @semantic-release/npm flag ([f26954c](https://github.com/choorhong/mys/commit/f26954cf80c5286a3d7bb95647273611053521d0))
+* **github workflow:** Update @semantic-release/npm flag ([d8e9e20](https://github.com/choorhong/mys/commit/d8e9e202435761d8b740a99ff524853e9e6ee14e))
+
 ## [1.0.3](https://github.com/choorhong/mys/compare/v1.0.2...v1.0.3) (2025-01-22)
 
 
